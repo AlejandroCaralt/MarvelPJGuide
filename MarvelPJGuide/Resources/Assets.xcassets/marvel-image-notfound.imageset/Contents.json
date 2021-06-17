@@ -1,0 +1,25 @@
+{
+  "images" : [
+    {
+      "filename" : "IMG_20210616_191731_804.jpg",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "IMG_20210616_191224_246.jpg",
+      "idiom" : "universal",
+      "locale" : "es"
+    },
+    {
+      "filename" : "IMG_20210616_191731_804-1.jpg",
+      "idiom" : "universal",
+      "locale" : "en"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "localizable" : true
+  }
+}

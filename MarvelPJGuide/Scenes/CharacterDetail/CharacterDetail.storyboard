@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xq2-rO-SLM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Character Detail View Controller-->
+        <scene sceneID="U9F-I4-MWf">
+            <objects>
+                <viewController storyboardIdentifier="CharacterDetailViewController" id="Xq2-rO-SLM" customClass="CharacterDetailViewController" customModule="MarvelPJGuide" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lmp-60-toN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3K7-Ij-q4K">
+                                <rect key="frame" x="0.0" y="52" width="414" height="810"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IR0-Uh-Jos">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1040"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ByP-Fa-Vfr" customClass="CDHeaderView" customModule="MarvelPJGuide" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="400" id="uLy-rk-Lbb"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whh-5t-MJd" customClass="CDDescriptionView" customModule="MarvelPJGuide" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="400" width="414" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" placeholder="YES" id="dNx-sl-M08"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mfd-vK-UZC" customClass="CDMultipleItemsView" customModule="MarvelPJGuide" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="528" width="414" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" placeholder="YES" id="ktI-HX-xzd"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iDz-gm-PRe" customClass="CDMultipleItemsView" customModule="MarvelPJGuide" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="656" width="414" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" placeholder="YES" id="jlR-ot-Od1"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g2f-uY-Lxj" customClass="CDMultipleItemsView" customModule="MarvelPJGuide" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="784" width="414" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" placeholder="YES" id="fcY-nJ-JMR"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0uE-d5-WIy" customClass="CDMultipleItemsView" customModule="MarvelPJGuide" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="912" width="414" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" placeholder="YES" id="o1p-jt-URb"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="IR0-Uh-Jos" firstAttribute="height" secondItem="3K7-Ij-q4K" secondAttribute="height" priority="250" id="745-4b-Qeg"/>
+                                    <constraint firstItem="IR0-Uh-Jos" firstAttribute="top" secondItem="3K7-Ij-q4K" secondAttribute="top" id="G7x-3z-iiH"/>
+                                    <constraint firstAttribute="trailing" secondItem="IR0-Uh-Jos" secondAttribute="trailing" id="TQq-zy-ZnW"/>
+                                    <constraint firstItem="IR0-Uh-Jos" firstAttribute="leading" secondItem="3K7-Ij-q4K" secondAttribute="leading" id="VbZ-17-yEX"/>
+                                    <constraint firstItem="IR0-Uh-Jos" firstAttribute="width" secondItem="3K7-Ij-q4K" secondAttribute="width" id="ae3-Vx-1mG"/>
+                                    <constraint firstAttribute="bottom" secondItem="IR0-Uh-Jos" secondAttribute="bottom" id="ebR-R9-7LK"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CW1-Sz-Ort">
+                                <rect key="frame" x="366" y="60" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="CbN-Lw-pp6"/>
+                                    <constraint firstAttribute="width" constant="32" id="e52-kh-X9T"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="closeButtonTapped:" destination="Xq2-rO-SLM" eventType="touchUpInside" id="Hgx-oE-Hpq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KBb-HF-Bt6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CW1-Sz-Ort" firstAttribute="top" secondItem="KBb-HF-Bt6" secondAttribute="top" constant="16" id="4oP-i4-RRi"/>
+                            <constraint firstItem="3K7-Ij-q4K" firstAttribute="top" secondItem="KBb-HF-Bt6" secondAttribute="top" constant="8" id="B3s-QN-5Zj"/>
+                            <constraint firstItem="KBb-HF-Bt6" firstAttribute="bottom" secondItem="3K7-Ij-q4K" secondAttribute="bottom" id="FUb-8t-UYy"/>
+                            <constraint firstItem="KBb-HF-Bt6" firstAttribute="trailing" secondItem="CW1-Sz-Ort" secondAttribute="trailing" constant="16" id="Mc0-NJ-Ceb"/>
+                            <constraint firstItem="KBb-HF-Bt6" firstAttribute="trailing" secondItem="3K7-Ij-q4K" secondAttribute="trailing" id="TdA-fl-Mjh"/>
+                            <constraint firstItem="3K7-Ij-q4K" firstAttribute="leading" secondItem="KBb-HF-Bt6" secondAttribute="leading" id="w33-Il-cyL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="CW1-Sz-Ort" id="cim-9o-ZN4"/>
+                        <outlet property="comicsView" destination="Mfd-vK-UZC" id="4g8-AE-cxs"/>
+                        <outlet property="descriptionView" destination="whh-5t-MJd" id="gMz-QE-E0I"/>
+                        <outlet property="eventsView" destination="0uE-d5-WIy" id="njN-Dr-GyI"/>
+                        <outlet property="headerView" destination="ByP-Fa-Vfr" id="YAv-Co-mxo"/>
+                        <outlet property="scrollView" destination="3K7-Ij-q4K" id="bEi-59-M80"/>
+                        <outlet property="seriesView" destination="iDz-gm-PRe" id="BIU-Ah-QXR"/>
+                        <outlet property="storiesView" destination="g2f-uY-Lxj" id="X7b-sA-f73"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hYl-0j-uhg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-123" y="66"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

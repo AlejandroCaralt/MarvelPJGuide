@@ -1,0 +1,26 @@
+PODS:
+  - Alamofire (5.4.1)
+  - CryptoSwift (1.4.0)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.4)
+  - CryptoSwift
+  - SDWebImage (~> 5.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - CryptoSwift
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  CryptoSwift: 7cc902df1784de3b389a387756c7d710f197730c
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+
+PODFILE CHECKSUM: 0ed088dabc81d588702a9703b2866febd0d87146
+
+COCOAPODS: 1.9.3

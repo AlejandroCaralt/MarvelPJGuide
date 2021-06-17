@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  MarvelPJGuide
+
+  Created by Alejandro Caralt Caralt on 15/06/2021.
+  
+*/
+
+"generic_error" = "An unexpected error seems to have occurred with the service. Please try again later.";
+"characters_list_title" = "Characters";
+"character_detail_description" = "Description";
+"character_detail_comics" = "Comics";
+"character_detail_series" = "Series";
+"character_detail_events" = "Events";
+"character_detail_stories" = "Stories";

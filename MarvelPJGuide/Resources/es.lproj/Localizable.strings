@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  MarvelPJGuide
+
+  Created by Alejandro Caralt Caralt on 15/06/2021.
+  
+*/
+
+"generic_error" = "Parece que ha habido un error inesperado con el servicio. Por favor, inténtalo más tarde.";
+"characters_list_title" = "Personajes";
+"character_detail_description" = "Descripción";
+"character_detail_comics" = "Comics";
+"character_detail_series" = "Series";
+"character_detail_events" = "Eventos";
+"character_detail_stories" = "Historias";
