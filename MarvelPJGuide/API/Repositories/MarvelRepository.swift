@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-protocol MarvelRepositoryDelegate {
+protocol MarvelRepositoryDelegate: class {
     func getCharactersSuccess(model: MVAPIResponseModel)
     func getCharactersError(error: APIError)
     func getCharacterDetailSuccess(model: MVCharacterInfoModel)
@@ -24,10 +24,10 @@ extension MarvelRepositoryDelegate {
 
 class MarvelRepository: API {
 
-    var delegate: MarvelRepositoryDelegate?
+    weak var delegate: MarvelRepositoryDelegate?
 
     func getMarvelCharacters(model: MVCharactersRequestModel) {
-        
+
         guard let authentication = try? MVAPIAuthenticationModel().asDictionary() else {
             delegate?.getCharactersError(error: APIError())
             return
@@ -43,21 +43,20 @@ class MarvelRepository: API {
         let request: URLConvertible = "\(APIConstants.marvelURL)\(APIConstants.EndPoint.getCharacters.rawValue)?\(authentication.queryString)&\(params.queryString)"
 
         AF.request(request, headers: headers).validate().responseJSON(completionHandler: { [weak self] (response) in
-            
+
             guard response.error == nil else {
 
                 self?.delegate?.getCharactersError(error: self?.getCustomError(error: response.error) ?? APIError())
                 return
             }
-            
+
             guard let json = response.value as? [String: Any],
                   let responseCode = json["code"] as? Int else {
 
                 self?.delegate?.getCharactersError(error: APIError())
                 return
             }
-        
-            
+
             guard responseCode.isAcceptableCode() else {
 
                 let description = json["status"] as? String ?? ""
@@ -78,7 +77,7 @@ class MarvelRepository: API {
     }
 
     func getMarvelCharacterDetail(characterId: Int) {
-        
+
         guard let authentication = try? MVAPIAuthenticationModel().asDictionary() else {
             delegate?.getCharacterDetailError(error: APIError())
             return
@@ -91,25 +90,25 @@ class MarvelRepository: API {
         let request: URLConvertible = "\(APIConstants.marvelURL)\(APIConstants.EndPoint.getCharacters.rawValue)?\(authentication.queryString)\(params.queryString)"
 
         AF.request(request, headers: headers).validate().responseJSON(completionHandler: { [weak self] (response) in
-            
+
             guard response.error == nil else {
 
                 self?.delegate?.getCharacterDetailError(error: self?.getCustomError(error: response.error) ?? APIError())
                 return
             }
-            
+
             guard let json = response.value as? [String: Any],
                   let responseCode = json["code"] as? Int else {
 
                 self?.delegate?.getCharacterDetailError(error: APIError())
                 return
             }
-        
-            
+
             guard responseCode.isAcceptableCode() else {
 
                 let description = json["status"] as? String ?? ""
-                self?.delegate?.getCharacterDetailError(error: APIError(errorCode: responseCode, description: description))
+                self?.delegate?.getCharacterDetailError(error: APIError(errorCode: responseCode,
+                                                                        description: description))
                 return
             }
 

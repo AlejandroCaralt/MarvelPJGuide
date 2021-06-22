@@ -17,9 +17,9 @@ class CDMultipleItemsView: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var decorationView: UIView!
     @IBOutlet weak var tableView: UITableView!
-    
+
     var items: [String] = []
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         xibSetup()
@@ -36,12 +36,12 @@ class CDMultipleItemsView: UIView {
 
         titleLabel.font = UIFont.bold(size: 18)
         titleLabel.textColor = UIColor.marveBlack
-        
+
         decorationView.layer.masksToBounds = false
         decorationView.layer.shadowRadius = 2
         decorationView.layer.shadowOpacity = 1
         decorationView.layer.shadowColor = UIColor.marveBlack.cgColor
-        decorationView.layer.shadowOffset = CGSize(width: 0 , height: 2)
+        decorationView.layer.shadowOffset = CGSize(width: 0, height: 2)
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -50,10 +50,10 @@ class CDMultipleItemsView: UIView {
     }
 
     func config(model: CDMultipleItemsViewModel) {
-        
+
         titleLabel.text = model.titleText
         self.items = model.items
-        
+
         tableView.reloadData()
     }
 }
@@ -69,7 +69,7 @@ extension CDMultipleItemsView: UITableViewDelegate, UITableViewDataSource {
         guard items.count > indexPath.row, let cell: CDItemCell = tableView.dequeueReusableCell() else {
             return UITableViewCell()
         }
-        
+
         cell.config(title: items[indexPath.row])
 
         return cell
@@ -79,4 +79,3 @@ extension CDMultipleItemsView: UITableViewDelegate, UITableViewDataSource {
         return UITableView.automaticDimension
     }
 }
-

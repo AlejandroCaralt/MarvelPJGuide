@@ -29,7 +29,16 @@ class MVCharactersRequestModel: Codable {
 
     init() {}
 
-    init(name: String? = nil, nameStartsWith: String? = nil, modifiedSince: Date? = nil, comics: Int? = nil, series: Int? = nil, events: Int? = nil, stories: Int? = nil, orderBy: String? = nil, limit: Int? = nil, offset: Int? = nil) {
+    init(name: String? = nil,
+         nameStartsWith: String? = nil,
+         modifiedSince: Date? = nil,
+         comics: Int? = nil,
+         series: Int? = nil,
+         events: Int? = nil,
+         stories: Int? = nil,
+         orderBy: String? = nil,
+         limit: Int? = nil,
+         offset: Int? = nil) {
 
         self.name = name
         self.nameStartsWith = nameStartsWith

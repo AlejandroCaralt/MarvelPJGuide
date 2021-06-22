@@ -1,0 +1,16 @@
+disabled_rules:
+- identifier_name
+- force_cast
+- line_length
+- function_parameter_count
+- cyclomatic_complexity
+- force_try
+- file_length
+- type_body_length
+- function_body_length
+- type_name
+- orphaned_doc_comment
+
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Pods

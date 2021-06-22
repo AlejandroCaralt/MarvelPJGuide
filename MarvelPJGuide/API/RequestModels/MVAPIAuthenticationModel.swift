@@ -9,7 +9,7 @@ import Foundation
 import CryptoSwift
 
 class MVAPIAuthenticationModel: Codable {
-    
+
     var ts: Int = 0
     var apikey: String = ""
     var hash: String = ""

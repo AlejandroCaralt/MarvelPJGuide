@@ -8,7 +8,7 @@
 import Foundation
 
 final class MVImageModel: APIModel, Codable {
-    
+
     var path: String?
     var imageExt: String?
 
@@ -23,7 +23,7 @@ final class MVImageModel: APIModel, Codable {
 
         guard let path = path,
               let imageExt = imageExt else { return nil }
-        
+
         return "\(path).\(imageExt)"
     }
 }

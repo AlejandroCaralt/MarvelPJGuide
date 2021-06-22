@@ -29,7 +29,10 @@ extension UIView {
 
 extension UIView {
 
-    func addShadow(to edges: [UIRectEdge], radius: CGFloat = 3.0, opacity: Float = 0.6, color: CGColor = UIColor.black.cgColor) {
+    func addShadow(to edges: [UIRectEdge],
+                   radius: CGFloat = 3.0,
+                   opacity: Float = 0.6,
+                   color: CGColor = UIColor.black.cgColor) {
 
         let fromColor = color
         let toColor = UIColor.clear.cgColor
@@ -47,7 +50,10 @@ extension UIView {
             case .bottom:
                 gradientLayer.startPoint = CGPoint(x: 0.5, y: 1.0)
                 gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.0)
-                gradientLayer.frame = CGRect(x: 0.0, y: viewFrame.height - radius, width: viewFrame.width, height: radius)
+                gradientLayer.frame = CGRect(x: 0.0,
+                                             y: viewFrame.height - radius,
+                                             width: viewFrame.width,
+                                             height: radius)
             case .left:
                 gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
                 gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
@@ -55,7 +61,10 @@ extension UIView {
             case .right:
                 gradientLayer.startPoint = CGPoint(x: 1.0, y: 0.5)
                 gradientLayer.endPoint = CGPoint(x: 0.0, y: 0.5)
-                gradientLayer.frame = CGRect(x: viewFrame.width - radius, y: 0.0, width: radius, height: viewFrame.height)
+                gradientLayer.frame = CGRect(x: viewFrame.width - radius,
+                                             y: 0.0,
+                                             width: radius,
+                                             height: viewFrame.height)
             default:
                 break
             }

@@ -9,15 +9,15 @@ import Foundation
 import Alamofire
 
 class API {
-    
+
     func configHeaders() -> HTTPHeaders {
-        
+
         var headers = HTTPHeaders()
-        
+
         headers.add(HTTPHeader(name: "Accept", value: "application/json"))
         headers.add(HTTPHeader(name: "Content-Type", value: "application/json"))
         headers.add(HTTPHeader(name: "Accept-Language", value: NSLocale.preferredLanguages[0]))
-        
+
         return headers
     }
 
@@ -44,7 +44,7 @@ class API {
     }
 
     func getCustomError(error: AFError?) -> APIError? {
-        
+
         guard let error = error else { return nil }
 
         return APIError(errorCode: error.responseCode, description: error.errorDescription)

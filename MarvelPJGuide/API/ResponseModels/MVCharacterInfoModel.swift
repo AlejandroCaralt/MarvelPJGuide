@@ -29,7 +29,7 @@ final class MVCharacterInfoModel: APIModel, Codable {
         self.name = dic["name"] as? String
         self.description = dic["description"] as? String
         self.resourceURI = dic["resourceURI"] as? String
-        
+
         if let modifiedDate = dic["modified"] as? String {
             self.modified = modifiedDate.date("yyyy-MM-dd'T'HH:mm:ssZ")
         }
@@ -45,15 +45,15 @@ final class MVCharacterInfoModel: APIModel, Codable {
         if let comics = dic["comics"] as? [String: Any] {
             self.comics = MVResourceListModel(dic: comics)
         }
-        
+
         if let stories = dic["stories"] as? [String: Any] {
             self.stories = MVResourceListModel(dic: stories)
         }
-        
+
         if let events = dic["events"] as? [String: Any] {
             self.events = MVResourceListModel(dic: events)
         }
-        
+
         if let series = dic["series"] as? [String: Any] {
             self.series = MVResourceListModel(dic: series)
         }

@@ -1,0 +1,36 @@
+# ------------------------------------------------------------------------------
+# Explanation of rules: https://github.com/realm/SwiftLint/blob/master/Rules.md
+# ------------------------------------------------------------------------------
+# Alejandro Caralt Caralt
+# To run autocorrect execute
+# cd project_directory
+# ./Pods/SwiftLint/swiftlint autocorrect --config .swiftlint_autocorrect.yml
+# ------------------------------------------------------------------------------
+whitelist_rules:
+- closing_brace
+- closure_spacing
+- colon
+- comma
+- control_statement
+- empty_enum_arguments
+- empty_parameters
+- empty_parentheses_with_trailing_closure
+- leading_whitespace
+- mark
+- opening_brace
+- operator_usage_whitespace
+- redundant_discardable_let
+- redundant_optional_initialization
+- return_arrow_whitespace
+- protocol_property_accessors_order
+- statement_position
+- trailing_comma
+- trailing_newline
+- trailing_semicolon
+- unused_closure_parameter
+- trailing_whitespace
+- vertical_whitespace
+- void_return
+excluded:
+  - Pods
+reporter: "xcode"

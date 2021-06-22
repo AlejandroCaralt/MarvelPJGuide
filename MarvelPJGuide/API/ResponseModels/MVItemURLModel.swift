@@ -8,7 +8,7 @@
 import Foundation
 
 final class MVItemURLModel: APIModel, Codable {
-    
+
     var type: String?
     var url: String?
 

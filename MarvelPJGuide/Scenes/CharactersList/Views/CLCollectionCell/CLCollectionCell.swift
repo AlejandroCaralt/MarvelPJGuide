@@ -18,7 +18,7 @@ class CLCollectionCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var bottomLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
@@ -35,12 +35,13 @@ class CLCollectionCell: UICollectionViewCell {
         self.layer.shadowRadius = 4
         self.layer.shadowOpacity = 1
         self.layer.shadowColor = UIColor.gray.cgColor
-        self.layer.shadowOffset = CGSize(width: 0 , height:2)
+        self.layer.shadowOffset = CGSize(width: 0, height: 2)
     }
 
     func config(model: CLCollectionCellModel) {
 
-        imageView.sd_setImage(with: URL(string: model.imageUrl), placeholderImage: "marvel-image-placeholder".image) { [weak self] (image, error, _, url) in
+        imageView.sd_setImage(with: URL(string: model.imageUrl),
+                              placeholderImage: "marvel-image-placeholder".image) { [weak self] (image, _, _, url) in
 
             if let imgUrl = url, imgUrl.absoluteString.contains("image_not_available") {
                 self?.imageView.image = "marvel-image-notfound".image

@@ -21,7 +21,7 @@ final class MVResourceListModel: APIModel, Codable {
         self.available = dic["available"] as? Int
         self.returned = dic["returned"] as? Int
         self.collectionURI = dic["collectionURI"] as? String
-        
+
         if let items = dic["items"] as? [[String: Any]] {
             self.items = MVItemModel.createArray(items)
         }

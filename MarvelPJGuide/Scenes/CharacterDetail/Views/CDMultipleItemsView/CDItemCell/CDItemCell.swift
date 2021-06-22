@@ -10,14 +10,14 @@ import UIKit
 class CDItemCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
     }
 
     func setupView() {
-        
+
         titleLabel.font = UIFont.regular(size: 14)
         titleLabel.textColor = UIColor.gray
     }

@@ -16,9 +16,9 @@ final class MVAPIResponseModel: Codable {
     var attributionHTML: String?
     var etag: String?
     var data: MVCharactersResponseModel?
-    
+
     init() {}
-    
+
     init(dic: [String: Any]) {
 
         self.code = dic["code"] as? Int
@@ -27,7 +27,7 @@ final class MVAPIResponseModel: Codable {
         self.attributionText = dic["attributionText"] as? String
         self.attributionHTML = dic["attributionHTML"] as? String
         self.etag = dic["etag"] as? String
-        
+
         if let data = dic["data"] as? [String: Any] {
             self.data = MVCharactersResponseModel(dic: data)
         }

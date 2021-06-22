@@ -16,7 +16,7 @@ final class MVCharactersResponseModel: APIModel, Codable {
     var results: [MVCharacterInfoModel]?
 
     init() {}
-    
+
     init(dic: [String: Any]) {
 
         self.offset = dic["offset"] as? Int

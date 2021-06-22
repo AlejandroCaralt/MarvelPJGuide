@@ -22,7 +22,7 @@ protocol CharactersListDataStore {
 class CharactersListPresenter: CharactersListPresenterLogic, CharactersListDataStore {
 
     weak var view: (CharactersListDisplayLogic & CharactersListRouterLogic)?
-    
+
     var repository = MarvelRepository()
     var model = CharactersList.Model()
     var selectedCharacter: MVCharacterInfoModel?
@@ -30,12 +30,12 @@ class CharactersListPresenter: CharactersListPresenterLogic, CharactersListDataS
     init() {
         repository.delegate = self
     }
-    
+
     func setupView() {
 
         view?.setupView()
         view?.config(headerView: "characters_list_title".localized)
-        
+
         getCharacters()
     }
 
@@ -89,9 +89,9 @@ class CharactersListPresenter: CharactersListPresenterLogic, CharactersListDataS
     }
 
     private func getCharacters() {
-        
+
         if let lastResponse = model.lastResponseModel {
-            
+
             guard let offset = lastResponse.offset,
                   let total = lastResponse.total,
                   offset < total else {
@@ -102,15 +102,15 @@ class CharactersListPresenter: CharactersListPresenterLogic, CharactersListDataS
         let requestModel = MVCharactersRequestModel()
         requestModel.limit = model.maxCharactersPerLoad
         requestModel.offset = model.charactersList.count
-        
+
         repository.getMarvelCharacters(model: requestModel)
-        
+
         model.repositoryAvailable = false
     }
 }
 
 extension CharactersListPresenter: MarvelRepositoryDelegate {
-    
+
     func getCharactersSuccess(model: MVAPIResponseModel) {
 
         self.model.lastResponseModel = model.data

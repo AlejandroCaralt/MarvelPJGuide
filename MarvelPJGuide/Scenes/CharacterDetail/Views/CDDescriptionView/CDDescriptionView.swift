@@ -34,19 +34,19 @@ class CDDescriptionView: UIView {
 
         titleLabel.font = UIFont.bold(size: 18)
         titleLabel.textColor = UIColor.marveBlack
-        
+
         descriptionLabel.font = UIFont.regular(size: 14)
         descriptionLabel.textColor = UIColor.marveBlack
-        
+
         decorationView.layer.masksToBounds = false
         decorationView.layer.shadowRadius = 2
         decorationView.layer.shadowOpacity = 1
         decorationView.layer.shadowColor = UIColor.marveBlack.cgColor
-        decorationView.layer.shadowOffset = CGSize(width: 0 , height: 2)
+        decorationView.layer.shadowOffset = CGSize(width: 0, height: 2)
     }
 
     func config(model: CDDescriptionViewModel) {
-        
+
         titleLabel.text = model.titleText
         descriptionLabel.text = model.descriptionText
     }

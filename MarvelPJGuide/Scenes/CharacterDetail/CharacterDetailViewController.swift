@@ -16,7 +16,7 @@ protocol CharacterDetailPresenterLogic {
 class CharacterDetailViewController: UIViewController {
     var presenter: CharacterDetailPresenterLogic?
     var dataStore: CharacterDetailDataStore?
-    
+
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var headerView: CDHeaderView!
@@ -27,30 +27,30 @@ class CharacterDetailViewController: UIViewController {
     @IBOutlet weak var eventsView: CDMultipleItemsView!
 
     // MARK: Object lifecycle
-  
+
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setupScene()
     }
-  
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupScene()
     }
-  
+
     // MARK: Setup
-  
+
     func setupScene() {
         let viewController = self
         let presenter = CharacterDetailPresenter()
-        
+
         presenter.view = viewController
         viewController.dataStore = presenter
         self.presenter = presenter
     }
-  
+
     // MARK: View lifecycle
-  
+
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.setupView()
@@ -66,7 +66,7 @@ class CharacterDetailViewController: UIViewController {
 extension CharacterDetailViewController: CharacterDetailDisplayLogic {
 
     func setupView() {
-        
+
         closeButton.setImage("close-button".image.withRenderingMode(.alwaysOriginal), for: .normal)
         scrollView.bounces = false
     }
@@ -74,7 +74,7 @@ extension CharacterDetailViewController: CharacterDetailDisplayLogic {
     func config(headerView: CDHeaderViewModel) {
 
         DispatchQueue.main.async { [weak self] in
-            
+
             self?.headerView.config(model: headerView)
         }
     }
@@ -82,7 +82,7 @@ extension CharacterDetailViewController: CharacterDetailDisplayLogic {
     func config(descriptionView: CDDescriptionViewModel?) {
 
         DispatchQueue.main.async { [weak self] in
-            
+
             if let model = descriptionView {
                 self?.descriptionView.config(model: model)
             } else {
@@ -92,10 +92,10 @@ extension CharacterDetailViewController: CharacterDetailDisplayLogic {
     }
 
     func config(itemView: CharacterDetail.MultipleItemsView, model: CDMultipleItemsViewModel?) {
-        
+
         switch itemView {
         case .comic:
-            
+
             DispatchQueue.main.async { [weak self] in
 
                 if let model = model {
@@ -105,7 +105,7 @@ extension CharacterDetailViewController: CharacterDetailDisplayLogic {
                 }
             }
         case .serie:
-            
+
             DispatchQueue.main.async { [weak self] in
 
                 if let model = model {
@@ -115,7 +115,7 @@ extension CharacterDetailViewController: CharacterDetailDisplayLogic {
                 }
             }
         case .event:
-            
+
             DispatchQueue.main.async { [weak self] in
 
                 if let model = model {
@@ -125,7 +125,7 @@ extension CharacterDetailViewController: CharacterDetailDisplayLogic {
                 }
             }
         case .story:
-            
+
             DispatchQueue.main.async { [weak self] in
 
                 if let model = model {

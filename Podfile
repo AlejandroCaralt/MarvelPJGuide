@@ -9,5 +9,6 @@ target 'MarvelPJGuide' do
   pod 'Alamofire', '~> 5.4'
   pod 'SDWebImage', '~> 5.0'
   pod 'CryptoSwift'
+  pod 'SwiftLint'
 
 end
