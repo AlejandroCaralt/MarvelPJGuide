@@ -6,7 +6,11 @@ When you touch the character image, a full-screen size view appears, containing 
 When the character has some of the information empty or undefined, the views that contain that information are hidden or, like the thumbnail, are replaced with a placeholder, allowing the user to see only the information available.
 
 ## MVP
-The code is based on the **Model****Viewcontroller****Presenter** Architecture Pattern.
+The code is based on the **Model****View****Presenter** Architecture Pattern.
+- The model interface defines all the data to be used in the scene.
+- The view only shows the data and routes the events from the screen to the presenter.
+- The presenter communicates between the model and the view and decides what to do. 
+
 Each scene has its own storyboard that is controlled by a view controller (UI), a presenter (logic), and a model (data). At the same time, almost all scenes have their UI components grouped into custom views, which can be located in /Common/Views or within its own scene folder, depending on where it is used in the application. 
 
 
